@@ -4,7 +4,7 @@ export default function layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <main>
+    <main className="font-suisse">
       <Header />
       {children}
     </main>
