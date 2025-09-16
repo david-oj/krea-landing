@@ -16,6 +16,7 @@ const ArrowDown = (props: React.SVGProps<SVGSVGElement>) => {
           data-name="Path 172"
           d="M68.081,117.282a3.136,3.136,0,0,0-4.435,0L34.5,146.428,5.354,117.282a3.136,3.136,0,0,0-4.435,4.436l31.364,31.364a3.136,3.136,0,0,0,4.435,0l31.363-31.364A3.136,3.136,0,0,0,68.081,117.282Z"
           fill="currentColor"
+          // strokeWidth={props.strokeWidth}
         />
       </g>
     </svg>

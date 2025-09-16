@@ -1,20 +1,23 @@
 "use client";
 
 import React from "react";
-import Home from "@/components/icons/Home";
-import Img from "@/components/icons/Image";
-import Video from "@/components/icons/Video";
-import Enhancer from "@/components/icons/Enhancer";
-import Realtime from "@/components/icons/Realtime";
-import Edit from "@/components/icons/Edit";
-import Assets from "@/components/icons/Assets";
-import Logo from "@/components/icons/Logo";
+import {
+  Home,
+  Img,
+  Video,
+  Enhancer,
+  Realtime,
+  Edit,
+  Assets,
+  Logo,
+  ArrowDown,
+  Gallery
+} from "@/components/icons";
 import User from "@/components/icons/user.png";
 import { Bell, Headset, Moon, SunMedium } from "lucide-react";
-import ArrowDown from "./icons/ArrowDown";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import Gallery from "./icons/Gallery";
+
 
 interface Icons {
   Icon: React.ElementType;
@@ -91,7 +94,9 @@ const Header = () => {
               } px-4 py-3 rounded-2xl transition duration-100 flex justify-center items-center`}
             >
               <icon.Icon
-                className={` ${idx === 0 ? "dark:text-black darkfill-black" : ""}  size-4.5`}
+                className={` ${
+                  idx === 0 ? "dark:text-black darkfill-black" : ""
+                }  size-4.5`}
               />
               <span className="absolute -bottom-10 hidden group-hover:block bg-muted rounded-full p-1.5 leading-none text-sm font-semibold">
                 {icon.label}
@@ -102,7 +107,7 @@ const Header = () => {
 
         <div className=" flex gap-3 ">
           <div className="flex items-center justify-center gap-2 bg-muted px-2 py-1 rounded-full">
-           <Gallery  className="size-4.5 " />
+            <Gallery className="size-4.5 " />
             Gallery
           </div>
           <div className="flex items-center justify-center gap-3 bg-muted px-2 py-1 rounded-full">
@@ -114,7 +119,11 @@ const Header = () => {
           </div>
           <div className="flex items-center justify-center gap-3 bg-muted p-2 rounded-full">
             {theme === "light" ? (
-              <SunMedium fill="black" className="size-4.5" onClick={toggleTheme}/>
+              <SunMedium
+                fill="black"
+                className="size-4.5"
+                onClick={toggleTheme}
+              />
             ) : (
               <Moon fill="white" className="size-4.5" onClick={toggleTheme} />
             )}

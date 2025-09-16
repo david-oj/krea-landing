@@ -121,28 +121,29 @@ const Hero = () => {
   }, [emblaApi]);
 
   return (
-    <section className="mt-[10rem] px-8">
+    <section className="section">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 md:gap-12  ">
           {Herocarousels.map((carousel, idx) => (
-            <div className="flex-1 max-md:min-w-full" key={idx}>
-              <div
-                className={`${
+            // <div className="flex-1 max-md:min-w-full" key={idx}>
+              <div key={idx}
+                className={`flex-none max-md:min-w-full ${
                   Herocarousels.length - 1 === idx ? "mr-4 md:mr-12" : ""
-                } relative lg:w-[800px] md:w-[600px] w-full lg:h-[450px] md:h-[380px] h-[300px] rounded-3xl overflow-hidden`}
+                } relative xl:w-[1000px] lg:w-[800px] md:w-[600px] w-full xl:h-[480px] lg:h-[450px] md:h-[380px] h-[300px] rounded-3xl overflow-hidden`}
               >
                 <Image
                   src={carousel.image}
                   alt={carousel.title}
-                  width={1000}
-                  height={1000}
+                  width={800}
+                  height={500}
+                  priority
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent to-black/70">
                   <div className="flex flex-col justify-end h-full p-8 text-white gap-2">
-                    <h2 className="text-3xl font-medium">{carousel.title}</h2>
+                    <h2 className="text-xl md:text-3xl font-medium">{carousel.title}</h2>
                     <div className="flex justify-between items-center">
-                      <p className="max-w-md">{carousel.description}</p>
+                      <p className="max-w-md max-md:text-sm">{carousel.description}</p>
                       <Button
                         variant="secondary"
                         size="lg"
@@ -154,7 +155,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            // </div>
           ))}
         </div>
       </div>
