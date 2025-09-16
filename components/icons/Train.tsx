@@ -28,9 +28,9 @@ const Train = (props: React.SVGProps<SVGSVGElement>) => {
           y2="1"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="#fff" stop-opacity="0.6" />
-          <stop offset="0.75" stop-color="#fff" stop-opacity="0.149" />
-          <stop offset="1" stop-color="#fff" stop-opacity="0" />
+          <stop offset="0" stopColor="#fff" stopOpacity="0.6" />
+          <stop offset="0.75" stopColor="#fff" stopOpacity="0.149" />
+          <stop offset="1" stopColor="#fff" stopOpacity="0" />
         </linearGradient>
         <pattern
           id="pattern"
@@ -47,7 +47,7 @@ const Train = (props: React.SVGProps<SVGSVGElement>) => {
           id="Group_1"
           data-name="Group 1"
           transform="translate(6.02 5.967)"
-          clip-path="url(#clip-path)"
+          clipPath="url(#clip-path)"
         >
           <rect
             id="Rectangle_1"

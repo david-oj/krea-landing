@@ -11,6 +11,9 @@ import MotionTransfer from "./MotionTransfer";
 import ArrowDown from "./ArrowDown";
 import Gallery from "./Gallery";
 import Train from "./Train";
+import CreditCard from "./CreditCard";
+import Journal from "./Journal";
+import Mobbin from "./Mobbin";
 
 export {
   Home,
@@ -26,4 +29,7 @@ export {
   ArrowDown,
   Gallery,
   Train,
+  CreditCard,
+  Journal,
+  Mobbin,
 };

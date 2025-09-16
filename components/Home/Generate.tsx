@@ -4,8 +4,6 @@ import {
   Enhancer,
   Realtime,
   Edit,
-  Assets,
-  Logo,
   Lipsync,
   MotionTransfer,
   ArrowDown,
@@ -80,7 +78,7 @@ const tools: Tool[] = [
     hasNewTag: true,
     Icon: MotionTransfer,
     bgStyle: "bg-black",
-    size: "size-[40px]",
+    size: "size-[28px]",
   },
   {
     title: "Train",
@@ -88,15 +86,15 @@ const tools: Tool[] = [
     hasNewTag: false,
     Icon: Train,
     bgStyle: "bg-white",
-    size: "size-[32px] ",
+    size: "size-[28px] ",
   },
 ];
 
 const Generate = () => {
   return (
-    <section className="section mb-[20rem] ">
+    <section className="section">
       <div className="flex justify-between">
-        <h2 className="font-medium text-2xl">Generate</h2>
+        <h2 className="heading">Generate</h2>
         <Button variant="link" className="text-blue-400 medium ">
           <ArrowDown className="size-3 stroke-3 stroke-blue-400" />
           Show all
@@ -106,14 +104,14 @@ const Generate = () => {
       <div className="mt-4 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-col-1 gap-y-4 ">
         {tools.map((tool, idx) => (
           <div
-            className="p-3 flex gap-2 justify-between items-center rounded-2xl hover:bg-muted"
+            className="p-3 flex lg:gap-3 gap-2 items-center rounded-2xl hover:bg-muted"
             key={idx}
           >
             <div className={`${tool.bgStyle} p-4 rounded-2xl `}>
               <tool.Icon className={`${tool.size} text-white `} />
             </div>
 
-            <div>
+            <div className="flex-1">
               <div className="flex gap-2 items-center">
                 <h3 className="text-xl font-medium">{tool.title}</h3>
                 {tool.hasNewTag && (

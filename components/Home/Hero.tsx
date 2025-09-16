@@ -121,7 +121,7 @@ const Hero = () => {
   }, [emblaApi]);
 
   return (
-    <section className="section">
+    <section className="section  md:pt-8">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 md:gap-12  ">
           {Herocarousels.map((carousel, idx) => (
@@ -129,7 +129,7 @@ const Hero = () => {
               <div key={idx}
                 className={`flex-none max-md:min-w-full ${
                   Herocarousels.length - 1 === idx ? "mr-4 md:mr-12" : ""
-                } relative xl:w-[1000px] lg:w-[800px] md:w-[600px] w-full xl:h-[480px] lg:h-[450px] md:h-[380px] h-[300px] rounded-3xl overflow-hidden`}
+                } relative xl:w-[1000px] lg:w-[800px] md:w-[600px] w-full xl:h-[480px] lg:h-[450px] md:h-[380px] h-[280px] rounded-3xl overflow-hidden`}
               >
                 <Image
                   src={carousel.image}
@@ -140,10 +140,10 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent to-black/70">
-                  <div className="flex flex-col justify-end h-full p-8 text-white gap-2">
+                  <div className="flex flex-col justify-end h-full p-4 md:p-8 text-white gap-2">
                     <h2 className="text-xl md:text-3xl font-medium">{carousel.title}</h2>
-                    <div className="flex justify-between items-center">
-                      <p className="max-w-md max-md:text-sm">{carousel.description}</p>
+                    <div className="flex max-md:flex-col max-md:gap-2 justify-between md:items-center">
+                      <p className="max-w-md mb-1 max-md:text-sm max-md:line-clamp-3">{carousel.description}</p>
                       <Button
                         variant="secondary"
                         size="lg"
