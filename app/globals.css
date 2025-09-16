@@ -117,7 +117,7 @@
 
 @layer utilities {
   .section{
-    @apply my-[8rem] px-4 md:px-8
+    @apply my-[6rem] md:my-[8rem] px-4 md:px-8
   }
 
   .heading{

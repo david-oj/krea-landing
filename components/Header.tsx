@@ -11,13 +11,12 @@ import {
   Assets,
   Logo,
   ArrowDown,
-  Gallery
+  Gallery,
 } from "@/components/icons";
 import User from "@/components/icons/user.png";
 import { Bell, Headset, Moon, SunMedium } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-
 
 interface Icons {
   Icon: React.ElementType;
@@ -71,18 +70,20 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-1 left-0 right-0 z-50 px-8  w-full">
-      <nav className="flex justify-between items-center">
+    <header className="fixed top-1 left-0 right-0 z-50 px-4 md:px-8  max-w-[1536px] mx-auto w-full ">
+      <nav className="flex justify-between max-md:py-4 items-center">
         <div className="flex gap-4 lg:gap-8 items-center ">
-          <Logo className="size-5.5" />
-          <div className="flex items-center justify-center gap-3 bg-muted px-2 py-1 rounded-full">
+          <Logo className="size-5.5 dark:fill-white" />
+          <div className="flex items-center justify-center gap-3 bg-muted px-2 md:py-1 rounded-full">
             <Image src={User} alt="user_icon" className="w-[20px]" />
-            BenevolentandMighty
-            <ArrowDown className="size-3 " />
+            <span className="block md:hidden lg:block">enchantedblithellama</span>
+            <div className="">
+              <ArrowDown className="size-3 " />
+            </div>
           </div>
         </div>
 
-        <div className="flex p-1.5 gap-1 bg-muted rounded-2xl">
+        <div className="hidden md:flex p-1.5 gap-1 bg-muted rounded-2xl">
           {icons.map((icon, idx) => (
             <a
               key={idx}
@@ -106,15 +107,15 @@ const Header = () => {
         </div>
 
         <div className=" flex gap-3 ">
-          <div className="flex items-center justify-center gap-2 bg-muted px-2 py-1 rounded-full">
+          <div className="hidden lg:flex items-center justify-center gap-2 bg-muted px-2 py-1 rounded-full">
             <Gallery className="size-4.5 " />
             Gallery
           </div>
-          <div className="flex items-center justify-center gap-3 bg-muted px-2 py-1 rounded-full">
+          <div className="hidden lg:flex items-center justify-center gap-3 bg-muted px-2 py-1 rounded-full">
             <Headset className="size-4.5" />
             Support
           </div>
-          <div className="flex items-center justify-center gap-3 bg-muted p-2 rounded-full">
+          <div className="hidden md:flex items-center justify-center gap-3 bg-muted p-2 rounded-full">
             <Bell className="size-4.5 fill-black dark:fill-white" />
           </div>
           <div className="flex items-center justify-center gap-3 bg-muted p-2 rounded-full">
@@ -127,6 +128,9 @@ const Header = () => {
             ) : (
               <Moon fill="white" className="size-4.5" onClick={toggleTheme} />
             )}
+          </div>
+          <div className="hidden lg:flex items-center">
+            <Image src={User} alt="user_icon" className="w-[20px]" />
           </div>
         </div>
       </nav>

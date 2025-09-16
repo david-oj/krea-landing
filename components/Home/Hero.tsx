@@ -121,7 +121,7 @@ const Hero = () => {
   }, [emblaApi]);
 
   return (
-    <section className="section  md:pt-8">
+    <section className="section md:pt-8">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 md:gap-12  ">
           {Herocarousels.map((carousel, idx) => (
@@ -129,7 +129,7 @@ const Hero = () => {
               <div key={idx}
                 className={`flex-none max-md:min-w-full ${
                   Herocarousels.length - 1 === idx ? "mr-4 md:mr-12" : ""
-                } relative xl:w-[1000px] lg:w-[800px] md:w-[600px] w-full xl:h-[480px] lg:h-[450px] md:h-[380px] h-[280px] rounded-3xl overflow-hidden`}
+                } relative xl:w-[1000px] lg:w-[800px] md:w-[600px] w-full xl:h-[480px] lg:h-[450px] h-[380px] max-sm:h-[280px] rounded-3xl overflow-hidden`}
               >
                 <Image
                   src={carousel.image}
