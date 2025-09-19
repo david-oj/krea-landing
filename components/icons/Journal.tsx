@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const CreditCard = (props: SVGProps<SVGSVGElement>) => {
+const Journal = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ const CreditCard = (props: SVGProps<SVGSVGElement>) => {
       className={`${props.className}`}
       fill="currentColor"
       stroke="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 448 512"
       {...props}
     >
@@ -21,4 +21,4 @@ const CreditCard = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default CreditCard;
+export default Journal;

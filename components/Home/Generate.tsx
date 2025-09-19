@@ -17,7 +17,7 @@ interface Tool {
   hasNewTag: boolean;
   Icon: React.ElementType;
   bgStyle: string;
-  size: string;
+  icnStyle: string;
 }
 
 const tools: Tool[] = [
@@ -27,7 +27,7 @@ const tools: Tool[] = [
     hasNewTag: true,
     Icon: Img,
     bgStyle: "bg-gradient-to-t from-[#D0E3F1] to-[#294962]",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Video",
@@ -35,7 +35,7 @@ const tools: Tool[] = [
     hasNewTag: false,
     Icon: Video,
     bgStyle: "bg-yellow-500",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Realtime",
@@ -44,7 +44,7 @@ const tools: Tool[] = [
     Icon: Realtime,
     bgStyle:
       "bg-gradient-to-t from-[#cef6ff] from-0% via-[#00d2ff] via-35% to-[#009df1]",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Enhancer",
@@ -52,7 +52,7 @@ const tools: Tool[] = [
     hasNewTag: true,
     Icon: Enhancer,
     bgStyle: "bg-gradient-to-b from-black to-[#888888]",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Edit",
@@ -61,7 +61,7 @@ const tools: Tool[] = [
     Icon: Edit,
     bgStyle:
       "bg-gradient-to-t from-[#AE91CA] via-[#592A85] via-60% to-[#180728]",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Video Lipsync",
@@ -70,7 +70,7 @@ const tools: Tool[] = [
     Icon: Lipsync,
     bgStyle:
       "bg-gradient-to-t from-[#BBCA91] via-[#3C878F] via-60% to-[#07280F]",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Motion Transfer",
@@ -78,7 +78,7 @@ const tools: Tool[] = [
     hasNewTag: true,
     Icon: MotionTransfer,
     bgStyle: "bg-black",
-    size: "size-[28px]",
+    icnStyle: "size-[28px]",
   },
   {
     title: "Train",
@@ -86,7 +86,7 @@ const tools: Tool[] = [
     hasNewTag: false,
     Icon: Train,
     bgStyle: "bg-white",
-    size: "size-[28px] ",
+    icnStyle: "size-[28px] ",
   },
 ];
 
@@ -108,7 +108,7 @@ const Generate = () => {
             key={idx}
           >
             <div className={`${tool.bgStyle} p-4 rounded-2xl `}>
-              <tool.Icon className={`${tool.size} text-white `} />
+              <tool.Icon className={`${tool.icnStyle} text-white `} />
             </div>
 
             <div className="flex-1">

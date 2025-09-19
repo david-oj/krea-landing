@@ -1,4 +1,4 @@
-const Enhancer = (props: React.SVGProps<SVGSVGElement>) => {
+const RealTIme = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,4 +33,4 @@ const Enhancer = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default Enhancer;
+export default RealTIme;

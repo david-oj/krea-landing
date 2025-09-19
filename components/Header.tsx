@@ -12,11 +12,13 @@ import {
   Logo,
   ArrowDown,
   Gallery,
+  Menu,
 } from "@/components/icons";
-import User from "@/components/icons/user.png";
+import user from "@/assets/icons/user.png";
 import { Bell, Headset, Moon, SunMedium } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useSidebar } from "@/components/SidebarProvider";
 
 interface Icons {
   Icon: React.ElementType;
@@ -64,19 +66,25 @@ const icons: Icons[] = [
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
+  const { setOpen } = useSidebar();
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
-    <header className="fixed top-1 left-0 right-0 z-50 px-4 md:px-8  max-w-[1536px] mx-auto w-full ">
-      <nav className="flex justify-between max-md:py-4 items-center">
-        <div className="flex gap-4 lg:gap-8 items-center ">
+    <header className="fixed md:top-5 top-2 left-0 right-0 z-20 px-4 md:px-8  max-w-[1536px] mx-auto w-full ">
+      <nav className="flex justify-between items-center">
+        <div className="group flex gap-4 lg:gap-8 items-center ">
           <Logo className="size-5.5 dark:fill-white" />
-          <div className="flex items-center justify-center gap-3 bg-muted px-2 md:py-1 rounded-full">
-            <Image src={User} alt="user_icon" className="w-[20px]" />
-            <span className="block md:hidden lg:block">enchantedblithellama</span>
+          <div
+            tabIndex={0}
+            className=" flex items-center justify-start lg:gap-3 gap-2 bg-muted px-2 py-1 rounded-full hover:cursor-pointer max-lg:w-16 max-lg:group-hover:w-full max-lg:group-focus-within:w-full transition-all duration-800 overflow-hidden"
+          >
+            <Image src={user} alt="user_icon" className="w-[20px]" />
+            <span className="block max-lg:w-0 group-hover:w-full group-focus-within:w-full transition-all duration-800 overflow-hidden">
+              enchantedblithellama
+            </span>
             <div className="">
               <ArrowDown className="size-3 " />
             </div>
@@ -129,8 +137,11 @@ const Header = () => {
               <Moon fill="white" className="size-4.5" onClick={toggleTheme} />
             )}
           </div>
-          <div className="hidden lg:flex items-center">
-            <Image src={User} alt="user_icon" className="w-[20px]" />
+          <div className="hidden lg:flex items-center hover:cursor-pointer">
+            <Image src={user} alt="user_icon" className="w-[20px]" />
+          </div>
+          <div className="md:hidden flex items-center">
+            <Menu onClick={() => setOpen(true)} className="size-4.5" />
           </div>
         </div>
       </nav>

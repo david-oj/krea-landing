@@ -14,6 +14,9 @@ import Train from "./Train";
 import CreditCard from "./CreditCard";
 import Journal from "./Journal";
 import Mobbin from "./Mobbin";
+import Upgrade from "./Upgrade";
+import Settings from "./Settings";
+import Menu from "./Menu";
 
 export {
   Home,
@@ -32,4 +35,7 @@ export {
   CreditCard,
   Journal,
   Mobbin,
+  Upgrade,
+  Settings,
+  Menu,
 };
