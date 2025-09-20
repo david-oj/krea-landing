@@ -7,7 +7,6 @@ import {
   Edit,
   Lipsync,
   MotionTransfer,
-  ArrowDown,
   Train,
   Logo,
   Upgrade,
@@ -15,11 +14,15 @@ import {
   Assets,
 } from "@/components/icons";
 import user from "@/assets/icons/user.png";
-import { useSidebar } from "@/components/SidebarProvider";
 import { Button } from "../ui/button";
-import { useState } from "react";
-import { Check, X } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface Tool {
   title: string;
@@ -137,13 +140,17 @@ const account: Account[] = [
   },
 ];
 
-const SideBar = () => {
-  const { open, setOpen } = useSidebar();
+interface SidebarProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}
+
+const SideBar = ({open, setOpen}: SidebarProps) => {
   return (
     <aside
       className={`fixed inset-y-0 z-40 top-0 left-0 max-h-screen h-screen transform ${
         open ? "translate-0" : "-translate-x-full"
-      } md:-translate-x-full transition-transform duration-400  w-[300px] px-4.5 pb-40 space-y-6 bg-white overflow-auto hide-scrollbar dark:bg-black`}
+      } md:-translate-x-full transition-transform duration-400 w-[300px] sm:w-[360px] px-4.5 pb-40 space-y-6 bg-white overflow-auto hide-scrollbar dark:bg-black`}
     >
       <div className="sticky top-0 py-3.5 dark:bg-black bg-white flex justify-between ">
         <X
@@ -198,28 +205,36 @@ const SideBar = () => {
         </div>
       </div>
 
-      <div>
-        <h2 className="text-xl font-medium">Apps</h2>
-
-        <div className="space-y-4 mt-2">
-          {tools.map((tool, idx) => (
-            <div className="flex justify-between" key={idx}>
-              <div className="flex gap-3 items-center">
-                <div className={`${tool.bgStyle} rounded-lg`}>
-                  <tool.Icon className={` ${tool.icnStyle} text-white`} />
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className="text-xl font-medium">
+            Apps
+          </AccordionTrigger>
+          <AccordionContent className="space-y-4 mt-2">
+            {tools.map((tool, idx) => (
+              <div className="flex justify-between" key={idx}>
+                <div className="flex gap-3 items-center">
+                  <div className={`${tool.bgStyle} rounded-lg`}>
+                    <tool.Icon className={` ${tool.icnStyle} text-white`} />
+                  </div>
+                  <span className="text-sm">{tool.title}</span>
                 </div>
-                <span className="text-sm">{tool.title}</span>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="rounded-full leading-0"
+                >
+                  Open
+                </Button>
               </div>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="rounded-full leading-0"
-              >
-                Open
-              </Button>
-            </div>
-          ))}
-        </div>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <div>
+        {/* className="text-xl font-medium" */}
+
+        <div></div>
       </div>
 
       <div>
@@ -229,7 +244,8 @@ const SideBar = () => {
           <div className="">
             <p className="text-sm">An igloo village glowing</p>
             <div className="flex gap-1 items-center text-muted-foreground">
-              <Realtime className="size-[12px]" /> <span className="text-xs">Realtime</span>
+              <Realtime className="size-[12px]" />{" "}
+              <span className="text-xs">Realtime</span>
             </div>
           </div>
         </div>

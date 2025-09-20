@@ -18,7 +18,6 @@ import user from "@/assets/icons/user.png";
 import { Bell, Headset, Moon, SunMedium } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useSidebar } from "@/components/SidebarProvider";
 
 interface Icons {
   Icon: React.ElementType;
@@ -64,16 +63,20 @@ const icons: Icons[] = [
   },
 ];
 
-const Header = () => {
+interface HeaderProps {
+  setOpen: (open: boolean) => void;
+}
+
+
+const Header = ({setOpen}: HeaderProps) => {
   const { theme, setTheme } = useTheme();
-  const { setOpen } = useSidebar();
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
-    <header className="fixed md:top-5 top-2 left-0 right-0 z-20 px-4 md:px-8  max-w-[1536px] mx-auto w-full ">
+    <header className="fixed md:top-5 top-2 left-0 right-0 z-20 px-4 md:px-8 max-w-[1536px] mx-auto w-full ">
       <nav className="flex justify-between items-center">
         <div className="group flex gap-4 lg:gap-8 items-center ">
           <Logo className="size-5.5 dark:fill-white" />
