@@ -59,7 +59,7 @@ const Herocarousels: Herocarousel[] = [
 
 const Hero = () => {
   // Autoplay plugin instance (useRef to keep stable)
-  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false }));
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, skipSnaps: false, align: "start" },

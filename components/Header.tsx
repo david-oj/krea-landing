@@ -144,7 +144,7 @@ const Header = ({setOpen}: HeaderProps) => {
             <Image src={user} alt="user_icon" className="w-[20px]" />
           </div>
           <div className="md:hidden flex items-center">
-            <Menu onClick={() => setOpen(true)} className="size-4.5" />
+            <Menu onClick={() => setOpen(true)} className="size-5" />
           </div>
         </div>
       </nav>
